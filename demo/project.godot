@@ -11,7 +11,16 @@ config_version=4
 [application]
 
 config/name="GDSerial"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+OfSerial="*res://addons/GDOfSerial/GDOfSerial.gdns"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/GDOfSerial/plugin.cfg" )
 
 [gui]
 

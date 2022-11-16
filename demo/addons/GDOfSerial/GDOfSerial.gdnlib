@@ -1,0 +1,18 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
+
+[entry]
+
+OSX.64="res://addons/GDOfSerial/osx/libgdofserial.dylib"
+Windows.64="res://addons/GDOfSerial/windows/libgdofserial.dll"
+X11.64="res://addons/GDOfSerial/linux/libgdofserial.so"
+
+[dependencies]
+
+OSX.64=[  ]
+Windows.64=[  ]
+X11.64=[  ]
