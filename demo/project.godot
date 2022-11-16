@@ -20,7 +20,7 @@ OfSerial="*res://addons/GDOfSerial/GDOfSerial.gdns"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/GDOfSerial/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 

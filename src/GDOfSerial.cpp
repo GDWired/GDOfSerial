@@ -114,7 +114,7 @@ bool GDOfSerial::begin_with_config(const String p_port_name, const int p_baudrat
 		
 		case SERIAL_6E1:
 			l_data = 6;
-			l_parity = OF_SERIAL_PARITY_N;
+			l_parity = OF_SERIAL_PARITY_E;
 			l_stop = 1;
 			break;
 		
