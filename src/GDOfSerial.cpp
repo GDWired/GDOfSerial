@@ -16,7 +16,6 @@ GDOfSerial::~GDOfSerial() {
 //###############################################################
 
 void GDOfSerial::_register_methods() {
-	register_method("list_devices", &GDOfSerial::list_devices);
 	register_method("get_device_list", &GDOfSerial::get_device_list);
 	register_method("begin", &GDOfSerial::begin);
 	register_method("begin_with_config", &GDOfSerial::begin_with_config);
@@ -40,10 +39,6 @@ void GDOfSerial::_init() {
 //###############################################################
 //	Wrapped methods
 //###############################################################
-
-void GDOfSerial::list_devices() {
-	m_serial.listDevices();
-}
 
 Array GDOfSerial::get_device_list() {
 	const auto& l_devices = m_serial.getDeviceList();

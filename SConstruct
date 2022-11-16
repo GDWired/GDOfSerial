@@ -30,11 +30,17 @@ def compile(base_dir):
         cmake_target = "Debug"
     else:
         cmake_target = "Release"
+    
     sys_exec(["mkdir", "{}/{}".format(base_dir, env["target"])])
     if env["platform"] == "osx":
         sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=ON", "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
-    else:
+    elif env['platform'] == "windows":
+        sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=OFF", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
+        sys_exec(["cmake", "--build", "{}/{}".format(base_dir, env["target"]), "--config", cmake_target])
         sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=ON", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
+    else:
+        sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=OFF", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
+        
     sys_exec(["cmake", "--build", "{}/{}".format(base_dir, env["target"]), "--config", cmake_target])
     if env["platform"] == "windows":
         env.Append(LIBPATH=[env.Dir("{}/{}/{}/".format(base_dir, env["target"], cmake_target))])
@@ -54,7 +60,7 @@ if env['platform'] == "osx":
 elif env['platform'] in ('x11', 'linux'):
     env.Append(LIBS=["libofserial.a"])
 if env['platform'] == "windows":
-    env.Append(LIBS=["ofserial.lib"])
+    env.Append(LIBS=["ofserial.lib", "Setupapi.lib"])
 
 # Create lib
 sources = Glob("src/*.cpp")
