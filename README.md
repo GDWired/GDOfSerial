@@ -2,6 +2,6 @@
 
 # <p align="center">GDOfSerial (Godot 3.5)</p>
 
-openFramwork serial standalone for Godot
+openFramwork serial standalone for Godot, is a part of GDWired (https://github.com/GDWired).
 
 Works on macOS and Windows (Linux WIP)
