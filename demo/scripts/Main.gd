@@ -21,10 +21,10 @@ func _process(_delta):
 		#var data = _serial.read() # just one char
 		if _hexa.pressed:
 			var data_bytes: PoolByteArray = _serial.read_bytes(_serial.available())
-			_terminal.text += "Data received "
+			_terminal.text += "Data received ["
 			for byte in data_bytes:
 				_terminal.text += "0x%X" % byte + " " 
-			_terminal.text += "\n"
+			_terminal.text += "]\n"
 		else:
 			var data_string: String = _serial.read_string(_serial.available())
 			_terminal.text += "Data received [" + data_string + "]\n"
