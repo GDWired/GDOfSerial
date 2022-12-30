@@ -39,7 +39,7 @@ def compile(base_dir):
         sys_exec(["cmake", "--build", "{}/{}".format(base_dir, env["target"]), "--config", cmake_target])
         sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=ON", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
     else:
-        sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=OFF", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
+        sys_exec(["cmake", "-DDEMO=OFF", "-DSTATIC=ON", "-DCMAKE_POSITION_INDEPENDENT_CODE=ON", "-DCMAKE_BUILD_TYPE={}".format(cmake_target), "-B{}/{}".format(base_dir, env["target"]), "-S{}".format(base_dir)])
         
     sys_exec(["cmake", "--build", "{}/{}".format(base_dir, env["target"]), "--config", cmake_target])
     if env["platform"] == "windows":
