@@ -8,7 +8,7 @@ Works on macOS, Windows and Linux.
 
 ![Capture d’écran du 2022-12-30 17-24-40](https://user-images.githubusercontent.com/4105962/210091592-5f7041b2-74b6-4ad8-9f22-f04202043a87.png)
 
-In the image below (from the demo), if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string.
+In the image above (from the demo), if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string.
 
 ## API
 
@@ -18,15 +18,15 @@ In the image below (from the demo), if you press the "Send" button, the data on 
 # @return the device list
 get_device_list()
 
-# Start communication to the specific device
+# Start communication with the specific device
 # @param port_name the device port
 # @param baudrate baudrate
 # @return true if connected 
 begin(port_name, int baudrate)
 
-# Start communication to the specific device (using specific configuration)
-# Default is 8N1 (8 bits data, no parity, 1 stop bit)
-# The list of values:
+# Start communication with the specific device (using specific configuration)
+# Default configuration is SERIAL_8N1 (8 bits data, no parity, 1 stop bit)
+# Available values:
 #		SERIAL_5N1
 #		SERIAL_6N1
 #		SERIAL_7N1
@@ -53,7 +53,7 @@ begin(port_name, int baudrate)
 #		SERIAL_8O2
 # @param port_name the device port
 # @param baudrate baudrate
-# @param config baudrate
+# @param config value from the enum (default: SERIAL_8N1)
 # @return true if connected 
 begin_with_config(clean_session, keep_alive)
 
