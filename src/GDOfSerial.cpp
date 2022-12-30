@@ -9,6 +9,7 @@ GDOfSerial::GDOfSerial() :
 }
 
 GDOfSerial::~GDOfSerial() {
+	end();
 }
 
 //###############################################################
@@ -225,9 +226,12 @@ int GDOfSerial::read() {
 }
 
 String GDOfSerial::read_string(const int p_lenght) {
-	std::string l_buffer;
-	m_serial.readData(l_buffer, p_lenght);
-	return String(l_buffer.c_str());
+	PoolByteArray l_raw_data = read_bytes(p_lenght);
+	String l_buffer;
+	for (int l_index = 0; l_index < l_raw_data.size(); ++l_index) {
+		l_buffer += l_raw_data[l_index];
+	}
+	return l_buffer;
 }
 
 PoolByteArray GDOfSerial::read_bytes(const int p_lenght) {
