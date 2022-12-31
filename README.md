@@ -12,7 +12,7 @@ In the "demo" folder there is a sample project, after compiling the project you 
 
 ![Capture d’écran du 2022-12-30 17-24-40](https://user-images.githubusercontent.com/4105962/210091592-5f7041b2-74b6-4ad8-9f22-f04202043a87.png)
 
-On the picture above, this is the demo project, if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string.
+On the picture above, this is the demo project, if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string. The device used in this demo is an Arduino Leonardo with the example code here https://github.com/jferdelyi/ofSerial/blob/f2fe94bd775728b4236f0e2e0f757d448947c6b3/example/esp32_main.cpp.
 
 ## API
 
