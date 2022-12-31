@@ -4,7 +4,12 @@
 
 openFramwork serial standalone for Godot, is a part of GDWired (https://github.com/GDWired) for macOS, Windows and Linux.
 
-To compile it, just run `scons target=release` in the root folder. The Godot build dependencies must be installed first, you can find everything about it here https://docs.godotengine.org/en/stable/development/compiling/index.html.
+Dependencies:
+ - Godot build dependencies (https://docs.godotengine.org/en/stable/development/compiling/index.html)
+
+To compile it:
+ - Run `git clone --recurse-submodules git@github.com:GDWired/GDOfSerial.git`
+ - Run `scons target=release` on the root folder.
 
 ## Demo
 
