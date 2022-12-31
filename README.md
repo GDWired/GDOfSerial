@@ -25,13 +25,13 @@ On the picture above, this is the demo project, if you press the "Send" button, 
 
 # Get device list
 # @return the device list
-get_device_list()
+get_device_list() -> Array
 
 # Start communication with the specific device
 # @param port_name the device port
 # @param baudrate baudrate
 # @return true if connected 
-begin(port_name, baudrate)
+begin(port_name: String, baudrate: int) -> bool
 
 # Start communication with the specific device (using specific configuration)
 # Default configuration is SERIAL_8N1 (8 bits data, no parity, 1 stop bit)
@@ -64,54 +64,54 @@ begin(port_name, baudrate)
 # @param baudrate baudrate
 # @param config value from the enum (default: SERIAL_8N1)
 # @return true if connected 
-begin_with_config(clean_session, keep_alive)
+begin_with_config(port_name: String, baudrate: int, config: int) -> bool
 
 # Return true if initialized
 # @return true if initialized
-is_initialized()
+is_initialized() -> bool
 
 # Close connection
-end()
+end() -> void
 
 # Return the number of bytes available to read
 # @return the number of bytes available to read
-available()
+available() -> int
 
 # Read one byte
 # @return first byte
-read()
+read() -> int
 
 # Read data as string
 # @param length number of byte to read
 # @return data as a string
-read_string(length)
+read_string(length: int) -> String
 
 # Read raw data
 # @param length number of byte to read
 # @return raw data like [0x49, 0x4E, 0x49, 0x54]
-read_bytes(length)
+read_bytes(length: int) -> PoolByteArray
 
 # Write string
 # @param buffer the string to write
 # @return the number of bytes written
-print(buffer)
+print(buffer: String) -> int
 
 # Write string (with \n at the end)
 # @param buffer the string to write
 # @return the number of bytes written
-println(buffer)
+println(buffer: String) -> int
 
 # Write raw data (hexa like: [0x49, 0x4E, 0x49, 0x54])
 # @param buffer the raw data buffer
 # @return the number of bytes written
-write(buffer)
+write(buffer: PoolByteArray) -> int
 
 # Flush IN buffer
-flush_in()
+flush_in() -> void
 
 # Flush OUT buffer
-flush_out()
+flush_out() -> void
 
 # Flush IN/OUT buffers
-flush()
+flush() -> void
 ````
