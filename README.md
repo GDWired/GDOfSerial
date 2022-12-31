@@ -22,7 +22,7 @@ get_device_list()
 # @param port_name the device port
 # @param baudrate baudrate
 # @return true if connected 
-begin(port_name, int baudrate)
+begin(port_name, baudrate)
 
 # Start communication with the specific device (using specific configuration)
 # Default configuration is SERIAL_8N1 (8 bits data, no parity, 1 stop bit)
