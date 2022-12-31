@@ -2,13 +2,17 @@
 
 # <p align="center">GDOfSerial (Godot 3.5)</p>
 
-openFramwork serial standalone for Godot, is a part of GDWired (https://github.com/GDWired).
+openFramwork serial standalone for Godot, is a part of GDWired (https://github.com/GDWired) for macOS, Windows and Linux.
 
-Works on macOS, Windows and Linux.
+To compile it, just run `scons target=release` in the root folder. The Godot build dependencies must be installed first, you can find everything about it here https://docs.godotengine.org/en/stable/development/compiling/index.html.
+
+## Demo
+
+In the "demo" folder there is a sample project, after compiling the project you can open it with Godot 3.5.1. (You can also download a precompiled version of the plugin from the asset store or in the release section of github WIP) 
 
 ![Capture d’écran du 2022-12-30 17-24-40](https://user-images.githubusercontent.com/4105962/210091592-5f7041b2-74b6-4ad8-9f22-f04202043a87.png)
 
-In the image above (from the demo), if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string.
+On the picture above, this is the demo project, if you press the "Send" button, the data on top will be sent to the first device found. The received data will be automatically written to the terminal. It is possible to get the data in hexa or string.
 
 ## API
 
