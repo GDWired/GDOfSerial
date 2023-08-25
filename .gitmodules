@@ -1,6 +1,6 @@
 [submodule "godot-cpp"]
 	path = godot-cpp
-	url = git@github.com:godotengine/godot-cpp.git
+	url = https://github.com/godotengine/godot-cpp.git
 [submodule "ofSerial"]
 	path = ofSerial
-	url = git@github.com:jferdelyi/ofSerial.git
+	url = https://github.com/jferdelyi/ofSerial.git
