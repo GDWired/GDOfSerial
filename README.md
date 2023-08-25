@@ -8,7 +8,7 @@ Dependencies:
  - Godot build dependencies (https://docs.godotengine.org/en/stable/development/compiling/index.html)
 
 To compile it:
- - Run `git clone --recurse-submodules git@github.com:GDWired/GDOfSerial.git`
+ - Run `git clone --recurse-submodules https://github.com/GDWired/GDOfSerial.git`
  - Run `scons target=release` on the root folder.
 
 ## Demo
