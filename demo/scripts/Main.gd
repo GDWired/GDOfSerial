@@ -10,10 +10,16 @@ onready var _hexa: CheckButton = $DataContainer/Hexa
 func _ready() -> void:
 	#print(_serial.begin("cu.usbserial-0001", 115200))
 	var list: Array = _serial.get_device_list()
-	_serial.begin(list[0], 115200)
+	_serial.begin(list[0], 38400)
 	_serial.flush()
 	# I, N, I, T
 	_serial.write([0x49, 0x4E, 0x49, 0x54])
+
+
+func _input(event:InputEvent):
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_ENTER:
+			_on_SendData_pressed()
 
 
 func _process(_delta):
