@@ -235,11 +235,13 @@ String GDOfSerial::read_string(const int p_lenght) {
 }
 
 PoolByteArray GDOfSerial::read_bytes(const int p_lenght) {
-	std::string l_buffer;
-	m_serial.readData(l_buffer, p_lenght);
-
 	PoolByteArray l_byte_array;
-	char const *l_bytes = l_buffer.c_str();
+	if(p_lenght == 0)return l_byte_array;
+
+	std::vector<uint8_t> l_buffer{p_lenght};
+	char const *l_bytes = (char const *)&l_buffer[0];
+	m_serial.readData(l_bytes, p_lenght);
+
 	for (int l_index = 0; l_index < l_buffer.size(); l_index++) {
 		l_byte_array.append(l_bytes[l_index]);
 	}
